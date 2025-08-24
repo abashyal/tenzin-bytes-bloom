@@ -26,13 +26,13 @@ const HeroSection = () => {
                 Hi, I'm Tenzin Uden
               </h1>
               <p className="text-xl sm:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-                A Computer Science and Economics student at Whitman College (Class of 2026)</p>
+                A Computer Science and Economics student at Whitman College</p>
             </div>
           </div>
 
           <div className="space-y-6">
             <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              I have nternational experience across the U.S., Australia, Bhutan, and Cambodia, 
+              I have international experience across the U.S., Australia, Bhutan, and Cambodia, 
               and I enjoy building scalable software, teaching others, and contributing to impactful projects.
             </p>
 
