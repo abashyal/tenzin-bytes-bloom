@@ -4,34 +4,19 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Programming & Tools",
+      title: "Programming Languages",
       icon: <Code className="h-6 w-6" />,
       skills: [
         "Python", "SQL", "Go", "Java", "HTML", "Assembly", 
-        "Haskell", "JavaScript", "GitHub (rebasing, pull requests, merging)"
+        "Haskell", "JavaScript"
       ]
     },
     {
-      title: "Technologies",
+      title: "Tools & Technologies",
       icon: <Database className="h-6 w-6" />,
       skills: [
-        "Data visualization", "Cryptography inventory", "REST APIs", 
-        "Linux", "CLI", "Virtual Machines", "WSL", "TMUX", "JIRA", "Confluence"
-      ]
-    },
-    {
-      title: "AI/ML",
-      icon: <Brain className="h-6 w-6" />,
-      skills: [
-        "Deep learning", "YOLOv5", "Roboflow", 
-        "Data augmentation", "Model training"
-      ]
-    },
-    {
-      title: "Languages",
-      icon: <Globe className="h-6 w-6" />,
-      skills: [
-        "Dzongkha", "English", "Japanese", "Hindi", "Nepali"
+        "GitHub", "Data visualization", "REST APIs", 
+        "Virtual Machines", "Roboflow", "Data augmentation", "JIRA", "TMUX"
       ]
     }
   ];
@@ -50,10 +35,10 @@ const SkillsSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="card-shadow hover:card-shadow-hover transition-smooth">
+            <Card key={index} className="card-shadow hover:card-shadow-hover transition-smooth hover:scale-105 animate-float" style={{animationDelay: `${index * 0.2}s`}}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-xl">
-                  <div className="text-primary">
+                  <div className="text-primary animate-pulse-slow">
                     {category.icon}
                   </div>
                   {category.title}
@@ -64,7 +49,7 @@ const SkillsSection = () => {
                   {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20 hover:bg-primary/20 transition-fast"
+                      className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20 hover:bg-primary/20 transition-fast hover:scale-110 cursor-default"
                     >
                       {skill}
                     </span>

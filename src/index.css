@@ -19,19 +19,19 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Professional blue color scheme */
-    --primary: 213 94% 68%;
+    /* CS Tech-inspired vibrant color scheme */
+    --primary: 282 100% 70%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 213 94% 55%;
+    --primary-dark: 282 100% 55%;
 
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 10% 95%;
+    --muted-foreground: 240 10% 45%;
 
-    --accent: 204 94% 94%;
-    --accent-foreground: 213 94% 55%;
+    --accent: 120 100% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -40,11 +40,11 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 213 94% 68%;
 
-    /* Custom professional tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(213 94% 68%) 0%, hsl(204 94% 75%) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
-    --card-shadow: 0 4px 6px -1px hsl(213 94% 68% / 0.1), 0 2px 4px -1px hsl(213 94% 68% / 0.06);
-    --card-shadow-hover: 0 10px 15px -3px hsl(213 94% 68% / 0.1), 0 4px 6px -2px hsl(213 94% 68% / 0.05);
+    /* Custom CS tech tokens with dynamic gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(282 100% 70%) 0%, hsl(195 100% 50%) 50%, hsl(120 100% 40%) 100%);
+    --section-gradient: linear-gradient(45deg, hsl(240 10% 98%) 0%, hsl(282 20% 96%) 100%);
+    --card-shadow: 0 4px 6px -1px hsl(282 100% 70% / 0.15), 0 2px 4px -1px hsl(195 100% 50% / 0.1);
+    --card-shadow-hover: 0 20px 25px -5px hsl(282 100% 70% / 0.2), 0 10px 10px -5px hsl(195 100% 50% / 0.15);
     
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

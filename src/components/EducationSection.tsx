@@ -83,26 +83,6 @@ const EducationSection = () => {
             </Card>
           ))}
         </div>
-
-        <div className="mt-12">
-          <Card className="card-shadow">
-            <CardContent className="p-8">
-              <h3 className="text-xl font-semibold text-foreground mb-6">
-                Relevant Coursework
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {coursework.map((course, index) => (
-                  <div
-                    key={index}
-                    className="px-4 py-2 bg-accent/50 rounded-lg text-accent-foreground font-medium text-center"
-                  >
-                    {course}
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );

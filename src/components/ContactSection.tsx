@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -40,12 +40,6 @@ const ContactSection = () => {
       label: "Email",
       value: "udent@whitman.edu",
       href: "mailto:udent@whitman.edu"
-    },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      label: "Phone",
-      value: "509-629-9724",
-      href: "tel:509-629-9724"
     },
     {
       icon: <Github className="h-5 w-5" />,

@@ -1,5 +1,6 @@
-import { Mail, Phone, Github, Linkedin, Download } from 'lucide-react';
+import { Mail, Github, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import headshotImage from '@/assets/headshot.jpg';
 
 const HeroSection = () => {
   const handleDownloadResume = () => {
@@ -11,14 +12,24 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex items-center justify-center hero-gradient">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground">
-              Hi, I'm Tenzin Uden
-            </h1>
-            <p className="text-xl sm:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              A Computer Science and Economics student at Whitman College (Class of 2026) with a passion for 
-              software engineering, AI/ML, and technology-driven solutions.
-            </p>
+          <div className="space-y-6">
+            <div className="mx-auto w-48 h-48 rounded-full overflow-hidden border-4 border-primary-foreground/20 animate-float">
+              <img 
+                src={headshotImage} 
+                alt="Tenzin Uden - Computer Science Student"
+                className="w-full h-full object-cover hover:scale-110 transition-smooth"
+              />
+            </div>
+            
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground animate-pulse-slow">
+                Hi, I'm Tenzin Uden
+              </h1>
+              <p className="text-xl sm:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+                A Computer Science and Economics student at Whitman College (Class of 2026) with a passion for 
+                software engineering, AI/ML, and technology-driven solutions.
+              </p>
+            </div>
           </div>
 
           <div className="space-y-6">
@@ -30,25 +41,17 @@ const HeroSection = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <a 
                 href="mailto:udent@whitman.edu" 
-                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/20 transition-smooth"
+                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/20 transition-smooth hover:scale-105"
               >
                 <Mail className="h-4 w-4" />
                 <span className="text-sm">udent@whitman.edu</span>
               </a>
               
               <a 
-                href="tel:509-629-9724" 
-                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/20 transition-smooth"
-              >
-                <Phone className="h-4 w-4" />
-                <span className="text-sm">509-629-9724</span>
-              </a>
-              
-              <a 
                 href="https://github.com/Tenzinyo" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/20 transition-smooth"
+                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/20 transition-smooth hover:scale-105"
               >
                 <Github className="h-4 w-4" />
                 <span className="text-sm">GitHub</span>
@@ -58,7 +61,7 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/tenzin-uden" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/20 transition-smooth"
+                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/20 transition-smooth hover:scale-105"
               >
                 <Linkedin className="h-4 w-4" />
                 <span className="text-sm">LinkedIn</span>
@@ -68,7 +71,7 @@ const HeroSection = () => {
             <div className="pt-4">
               <Button 
                 onClick={handleDownloadResume}
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-medium px-8 py-3"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-medium px-8 py-3 hover:scale-105 transition-smooth animate-bounce-slow"
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download Resume
