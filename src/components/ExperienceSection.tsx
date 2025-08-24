@@ -8,7 +8,6 @@ const ExperienceSection = () => {
       position: "Software Engineering Intern",
       location: "Austin, TX",
       period: "May 2025 - Aug 2025",
-      type: "Upcoming",
       achievements: [
         "Automated cryptographic inventory on PowerScale OneFS",
         "Streamlined audit-compliant reports"
