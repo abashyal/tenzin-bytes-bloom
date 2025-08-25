@@ -4,8 +4,7 @@ import headshotImage from '@/assets/headshot.jpg';
 
 const HeroSection = () => {
   const handleDownloadResume = () => {
-    // This would typically link to a PDF file
-    window.open('#', '_blank');
+    window.open('/resume.pdf', '_blank');
   };
 
   return (
