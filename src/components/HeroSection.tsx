@@ -1,6 +1,6 @@
 import { Mail, Github, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import headshotImage from '@/assets/headshot.jpg';
+const headshotImage = "/headshot.jpg"; 
 
 const HeroSection = () => {
   const handleDownloadResume = () => {
