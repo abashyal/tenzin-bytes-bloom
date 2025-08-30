@@ -4,6 +4,7 @@ const headshotImage = "/headshot.jpg";
 
 const HeroSection = () => {
   const handleDownloadResume = () => {
+    console.log('Download button clicked, opening resume...');
     window.open('/resume.pdf', '_blank');
   };
 
