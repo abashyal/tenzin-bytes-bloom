@@ -4,52 +4,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Bento Grid Portfolio - Tenzin Uden
-   Dark olive green theme with cream card accents
+/* Watercolor Portfolio - Tenzin Uden
+   Warm parchment background, soft painted card hues, terracotta accent.
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Dark olive background */
-    --background: 80 18% 15%;
-    --foreground: 45 20% 88%;
+    /* Warm parchment background */
+    --background: 38 22% 91%;
+    --foreground: 25 18% 12%;
 
-    /* Medium olive card */
-    --card: 80 14% 22%;
-    --card-foreground: 45 20% 88%;
+    /* Default card — dusty blue-gray */
+    --card: 212 18% 84%;
+    --card-foreground: 25 18% 12%;
 
-    --popover: 80 14% 22%;
-    --popover-foreground: 45 20% 88%;
+    --popover: 42 28% 92%;
+    --popover-foreground: 25 18% 12%;
 
-    /* Burgundy red accent */
-    --primary: 350 52% 36%;
+    /* Terracotta primary */
+    --primary: 12 48% 48%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 350 52% 26%;
+    --primary-dark: 12 48% 36%;
 
-    --secondary: 80 18% 32%;
-    --secondary-foreground: 45 20% 88%;
+    --secondary: 35 18% 72%;
+    --secondary-foreground: 25 18% 12%;
 
-    --muted: 80 12% 28%;
-    --muted-foreground: 45 15% 62%;
+    --muted: 35 14% 82%;
+    --muted-foreground: 25 12% 40%;
 
-    --accent: 80 22% 42%;
-    --accent-foreground: 45 20% 88%;
+    --accent: 148 18% 76%;
+    --accent-foreground: 148 28% 12%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 80 12% 26%;
-    --input: 80 12% 26%;
-    --ring: 350 52% 36%;
+    --border: 35 14% 74%;
+    --input: 35 14% 74%;
+    --ring: 12 48% 48%;
 
-    /* Cream card tokens */
-    --card-cream-bg: 42 28% 87%;
-    --card-cream-fg: 80 22% 16%;
+    /* Watercolor card tokens */
+    --card-cream-bg: 42 32% 90%;
+    --card-cream-fg: 25 18% 12%;
 
-    /* Stripe colors */
-    --stripe-a: #8b2535;
-    --stripe-b: #6d1a27;
+    --card-sage-bg: 148 18% 82%;
+    --card-sage-fg: 148 28% 12%;
+
+    --card-peach-bg: 22 28% 85%;
+    --card-peach-fg: 20 25% 12%;
+
+    --card-lavender-bg: 268 14% 83%;
+    --card-lavender-fg: 268 22% 12%;
+
+    /* Stripe — warm coral for YouTube card */
+    --stripe-a: hsl(12, 42%, 50%);
+    --stripe-b: hsl(12, 36%, 40%);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s ease-out;
@@ -83,13 +92,31 @@
 }
 
 @layer utilities {
-  /* Cream bento card */
+  /* Warm cream */
   .bento-cream {
     background-color: hsl(var(--card-cream-bg));
     color: hsl(var(--card-cream-fg));
   }
 
-  /* Diagonal stripe decorative card */
+  /* Soft sage green */
+  .bento-sage {
+    background-color: hsl(var(--card-sage-bg));
+    color: hsl(var(--card-sage-fg));
+  }
+
+  /* Warm peach */
+  .bento-peach {
+    background-color: hsl(var(--card-peach-bg));
+    color: hsl(var(--card-peach-fg));
+  }
+
+  /* Soft lavender */
+  .bento-lavender {
+    background-color: hsl(var(--card-lavender-bg));
+    color: hsl(var(--card-lavender-fg));
+  }
+
+  /* Diagonal stripe — coral for YouTube */
   .bento-stripe {
     background: repeating-linear-gradient(
       -45deg,

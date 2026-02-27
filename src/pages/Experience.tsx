@@ -68,7 +68,7 @@ const Experience = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-background/90 backdrop-blur-md border-b border-white/8">
+      <div className="sticky top-0 z-10 bg-background/90 backdrop-blur-md border-b border-black/6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-4">
           <button
             onClick={() => navigate('/')}
@@ -104,7 +104,7 @@ const Experience = () => {
               className={`rounded-2xl p-6 sm:p-8 border transition-all ${
                 exp.upcoming
                   ? 'bg-primary/8 border-primary/30'
-                  : 'bg-card border-white/8 hover:border-white/16'
+                  : 'bg-card border-black/6 hover:border-black/12'
               }`}
             >
               {/* Top row */}
@@ -144,11 +144,11 @@ const Experience = () => {
               </ul>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/8">
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-black/6">
                 {exp.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white/6 border border-white/10"
+                    className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-black/5 border border-black/8"
                   >
                     {tag}
                   </span>
@@ -159,7 +159,7 @@ const Experience = () => {
         </div>
 
         {/* Footer nudge */}
-        <div className="mt-12 pt-8 border-t border-white/8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-black/6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <p className="text-sm opacity-35">Want to know more or work together?</p>
           <a
             href="mailto:udent@whitman.edu"

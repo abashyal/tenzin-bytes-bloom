@@ -116,15 +116,15 @@ const Index = () => {
           </div>
         </div>
 
-        {/* 2. NOW PLAYING CARD — 1 col */}
-        <div className="col-span-1 bg-card rounded-2xl p-5 flex flex-col justify-between min-h-[200px]">
+        {/* 2. NOW PLAYING CARD — sage */}
+        <div className="col-span-1 bento-sage rounded-2xl p-5 flex flex-col justify-between min-h-[200px]">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Now Playing</div>
           <div className="flex flex-col gap-3">
             {/* Vinyl record */}
             <div className="flex items-center gap-3">
               <div className="relative w-12 h-12 shrink-0">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-stone-700 via-stone-900 to-stone-700 flex items-center justify-center animate-spin" style={{ animationDuration: '4s' }}>
-                  <div className="w-4 h-4 rounded-full bg-card border-2 border-stone-600" />
+                  <div className="w-4 h-4 rounded-full bg-stone-800 border-2 border-stone-600" />
                 </div>
               </div>
               <div className="min-w-0">
@@ -134,7 +134,7 @@ const Index = () => {
             </div>
             {/* Progress bar */}
             <div className="space-y-1">
-              <div className="h-1 rounded-full bg-white/10 overflow-hidden">
+              <div className="h-1 rounded-full bg-black/10 overflow-hidden">
                 <div className="h-full w-2/5 rounded-full bg-primary opacity-80" />
               </div>
               <div className="flex justify-between text-[10px] opacity-30">
@@ -149,8 +149,8 @@ const Index = () => {
           </div>
         </div>
 
-        {/* 3. LINKS CARD — dark, 1 col */}
-        <div className="col-span-1 bg-card rounded-2xl p-5 flex flex-col justify-between min-h-[200px]">
+        {/* 3. LINKS CARD — peach */}
+        <div className="col-span-1 bento-peach rounded-2xl p-5 flex flex-col justify-between min-h-[200px]">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Connect</div>
           <div className="flex flex-col gap-3">
             <a href="mailto:udent@whitman.edu" className="flex items-center gap-2 text-sm hover:opacity-70 transition-opacity">
@@ -178,8 +178,8 @@ const Index = () => {
           <img src={headshotImage} alt="Tenzin Uden" className="w-full h-full object-cover object-top" />
         </div>
 
-        {/* 5. LIVE TIME CARD — dark, 1 col */}
-        <div className="col-span-1 bg-card rounded-2xl p-5 flex flex-col justify-between min-h-[240px]">
+        {/* 5. LIVE TIME CARD — lavender */}
+        <div className="col-span-1 bento-lavender rounded-2xl p-5 flex flex-col justify-between min-h-[240px]">
           <div className="flex items-center gap-2">
             <div className={`w-2 h-2 rounded-full animate-pulse ${isDay ? 'bg-amber-400' : 'bg-indigo-400'}`} />
             <span className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Live</span>
@@ -241,20 +241,20 @@ const Index = () => {
           </a>
         </div>
 
-        {/* 9. ANIME QUIZ CARD — dark, 1 col */}
-        <div className="col-span-1 bg-card rounded-2xl p-5 min-h-[260px]">
+        {/* 9. ANIME QUIZ CARD — cream */}
+        <div className="col-span-1 bento-cream rounded-2xl p-5 min-h-[260px]">
           <AnimeQuizCard />
         </div>
 
         {/* ── ROW 4 ──────────────────────────────────────────── */}
 
         {/* 10. TECH BOX — full width, tabbed */}
-        <div className="col-span-2 lg:col-span-4 bg-card rounded-2xl p-6">
+        <div className="col-span-2 lg:col-span-4 bento-cream rounded-2xl p-6">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">
             Work &amp; Skills
           </div>
           <Tabs defaultValue="experience">
-            <TabsList className="mb-5 bg-white/5 border border-white/10">
+            <TabsList className="mb-5 bg-black/5 border border-black/8">
               <TabsTrigger value="experience" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 Experience
               </TabsTrigger>
@@ -272,7 +272,7 @@ const Index = () => {
                   <div
                     key={i}
                     className={`flex-1 p-4 rounded-xl border ${
-                      exp.upcoming ? 'border-primary/40 bg-primary/5' : 'border-white/10 bg-white/3'
+                      exp.upcoming ? 'border-primary/40 bg-primary/5' : 'border-black/8 bg-black/4'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2 mb-1">
@@ -292,7 +292,7 @@ const Index = () => {
               </div>
               <button
                 onClick={() => navigate('/experience')}
-                className="w-full flex items-center justify-between px-5 py-4 rounded-xl border border-white/10 bg-white/3 hover:bg-white/8 hover:border-white/20 transition-all group"
+                className="w-full flex items-center justify-between px-5 py-4 rounded-xl border border-black/8 bg-black/4 hover:bg-black/6 hover:border-black/15 transition-all group"
               >
                 <span className="text-sm font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
                   See all 4 roles — Dell, HiddenLayer, Bhutan, Cambodia
@@ -307,7 +307,7 @@ const Index = () => {
                   <div
                     key={i}
                     className={`p-4 rounded-xl border ${
-                      edu.current ? 'border-primary/40 bg-primary/5' : 'border-white/10 bg-white/3'
+                      edu.current ? 'border-primary/40 bg-primary/5' : 'border-black/8 bg-black/4'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2 mb-1">
@@ -328,10 +328,10 @@ const Index = () => {
                   </div>
                 ))}
                 {/* Leadership folded in here */}
-                <div className="p-4 rounded-xl border border-white/10 bg-white/3">
+                <div className="p-4 rounded-xl border border-black/8 bg-black/4">
                   <div className="font-bold text-sm mb-1">Finance Committee — ASWC</div>
                   <div className="text-xs opacity-55 mb-1">Whitman College · Jan – May 2024</div>
-                  <div className="flex gap-4 pt-2 mt-2 border-t border-white/10">
+                  <div className="flex gap-4 pt-2 mt-2 border-t border-black/8">
                     <div className="text-center">
                       <div className="font-black text-base">$800K</div>
                       <div className="text-[10px] opacity-40 uppercase tracking-wide">Budget</div>
@@ -350,7 +350,7 @@ const Index = () => {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/8 border border-white/10 hover:bg-white/15 transition-colors cursor-default"
+                    className="px-3 py-1.5 rounded-full text-xs font-semibold bg-black/6 border border-black/8 hover:bg-black/10 transition-colors cursor-default"
                   >
                     {skill}
                   </span>
@@ -363,24 +363,24 @@ const Index = () => {
         {/* ── ROW 5 ──────────────────────────────────────────── */}
 
         {/* 11. CONTACT CARD — full width */}
-        <div className="col-span-2 lg:col-span-4 bg-card rounded-2xl p-6">
+        <div className="col-span-2 lg:col-span-4 bento-peach rounded-2xl p-6">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Get In Touch</div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="mailto:udent@whitman.edu" className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group flex-1">
+            <a href="mailto:udent@whitman.edu" className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-black/8 hover:bg-black/6 transition-all group flex-1">
               <Mail className="h-4 w-4 text-primary mt-0.5 shrink-0" />
               <div>
                 <div className="text-xs font-semibold opacity-50">Email</div>
                 <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">udent@whitman.edu</div>
               </div>
             </a>
-            <a href="https://github.com/Tenzinyo" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group flex-1">
+            <a href="https://github.com/Tenzinyo" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-black/8 hover:bg-black/6 transition-all group flex-1">
               <Github className="h-4 w-4 text-primary mt-0.5 shrink-0" />
               <div>
                 <div className="text-xs font-semibold opacity-50">GitHub</div>
                 <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">github.com/Tenzinyo</div>
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/tenzin-uden" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group flex-1">
+            <a href="https://www.linkedin.com/in/tenzin-uden" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-black/8 hover:bg-black/6 transition-all group flex-1">
               <Linkedin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
               <div>
                 <div className="text-xs font-semibold opacity-50">LinkedIn</div>
