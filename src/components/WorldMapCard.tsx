@@ -1,51 +1,26 @@
 import { useState } from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
 const pins = [
-  {
-    name: 'Bhutan',
-    flag: '🇧🇹',
-    coords: [90.4, 27.5] as [number, number],
-    fact: "Bhutan is the only country that measures success by Gross National Happiness. Plastic bags are banned, the country is carbon-negative, and it was doing sustainability before it was cool.",
-  },
-  {
-    name: 'Japan',
-    flag: '🇯🇵',
-    coords: [139.7, 35.7] as [number, number],
-    fact: "Japan has over 6,800 islands and experiences around 1,500 earthquakes a year — most too small to feel. There are more vending machines here than people in some countries.",
-  },
-  {
-    name: 'Cambodia',
-    flag: '🇰🇭',
-    coords: [104.9, 12.6] as [number, number],
-    fact: "Angkor Wat is the largest religious monument on Earth — built in the 12th century, it still appears on the Cambodian flag today. The temple complex is larger than the entire city of Paris.",
-  },
-  {
-    name: 'India',
-    flag: '🇮🇳',
-    coords: [78.9, 20.6] as [number, number],
-    fact: "India is the birthplace of zero, chess, and Snakes & Ladders. It has the world's largest vegetarian population and over 1,600 spoken languages.",
-  },
-  {
-    name: 'Australia',
-    flag: '🇦🇺',
-    coords: [133.8, -25.3] as [number, number],
-    fact: "Australia is wider than the moon, home to 21 of the world's 25 most venomous snakes, and has a feral camel population in the hundreds of thousands roaming the outback.",
-  },
-  {
-    name: 'USA',
-    flag: '🇺🇸',
-    coords: [-95.7, 37.1] as [number, number],
-    fact: "The US has no official language at the federal level — English just won by popularity. It also has more public libraries than McDonald's restaurants.",
-  },
+  { name: 'Boston',        coords: [-71.1,   42.4]  as [number, number], images: ['src/images/boston.jpg', 'src/images/boston2.jpg'], caption: 'I was 20 and in Boston interning with Dell Technologies when I grew fonder with Boston' },
+  { name: 'Washington',    coords: [-120.5,  47.5]  as [number, number], images: [], caption: '' },
+  { name: 'Bar Harbor',    coords: [-68.2,   44.4]  as [number, number], images: [], caption: '' },
+  { name: 'Los Angeles',   coords: [-118.2,  34.1]  as [number, number], images: [], caption: '' },
+  { name: 'Nagano, Japan',         coords: [138.2,   36.6]  as [number, number], images: [], caption: '' },
+  { name: 'Kirirom, Cambodia',  coords: [104.9, 11.6] as [number, number], images: [], caption: '' },
+  { name: 'Punakha, Bhutan',    coords: [89.8,  27.5] as [number, number], images: ['src/images/punakha.jpg'], caption: 'Punakha Dzong, also known as the "Palace of Great Happiness," is an architectural masterpiece and the current administrative centre of Punakha District. Constructed in 1637 by Ngawang Namgyal, the 1st Zhabdrung Rinpoche, it holds the distinction of being Bhutans second-oldest and second-largest dzong' },
+  { name: 'India',     coords: [78.9,  20.6] as [number, number], images: [], caption: '' },
+  { name: 'Australia', coords: [133.8, -25.3] as [number, number], images: [], caption: '' },
+  { name: 'Indonesia', coords: [115.2, 8.4] as [number, number],  images: [], caption: '' },
 ];
 
 type Pin = typeof pins[number];
 
 const WorldMapCard = () => {
-  const [selected, setSelected] = useState<Pin | null>(null);
+  const [selectedPin, setSelectedPin] = useState<Pin | null>(null);
 
   return (
     <div className="flex flex-col h-full relative">
@@ -78,21 +53,14 @@ const WorldMapCard = () => {
               ))
             }
           </Geographies>
-
           {pins.map((pin) => (
             <Marker
               key={pin.name}
               coordinates={pin.coords}
-              onClick={() => setSelected(selected?.name === pin.name ? null : pin)}
-              style={{ cursor: 'pointer' }}
+              onClick={() => pin.images.length > 0 && setSelectedPin(pin)}
+              style={{ cursor: pin.images.length > 0 ? 'pointer' : 'default' }}
             >
-              <circle
-                r={selected?.name === pin.name ? 6 : 4}
-                fill={selected?.name === pin.name ? 'hsl(12, 48%, 48%)' : 'hsl(12, 42%, 58%)'}
-                stroke="hsl(42, 32%, 90%)"
-                strokeWidth={1.5}
-                style={{ transition: 'all 0.2s ease' }}
-              />
+              <circle r={4} fill="#8b2535" stroke="#fff" strokeWidth={1} />
               <text
                 textAnchor="middle"
                 y={-9}
@@ -111,28 +79,26 @@ const WorldMapCard = () => {
         </ComposableMap>
       </div>
 
-      {/* Fun fact panel */}
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          selected ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0'
-        }`}
-      >
-        {selected && (
-          <div className="flex items-start gap-2.5 p-3 rounded-xl bg-black/8 border border-black/10">
-            <span className="text-2xl leading-none mt-0.5 shrink-0">{selected.flag}</span>
-            <div className="flex-1 min-w-0">
-              <div className="text-xs font-bold mb-1">{selected.name}</div>
-              <p className="text-xs opacity-65 leading-relaxed">{selected.fact}</p>
-            </div>
-            <button
-              onClick={() => setSelected(null)}
-              className="text-xs opacity-30 hover:opacity-70 transition-opacity shrink-0 mt-0.5"
-            >
-              ✕
-            </button>
+      <Dialog open={!!selectedPin} onOpenChange={(open) => !open && setSelectedPin(null)}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle>{selectedPin?.name}</DialogTitle>
+          </DialogHeader>
+          {selectedPin?.caption && (
+            <p className="text-sm text-muted-foreground">{selectedPin.caption}</p>
+          )}
+          <div className="grid grid-cols-2 gap-3 mt-2">
+            {selectedPin?.images.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`${selectedPin.name} ${i + 1}`}
+                className="w-full h-40 object-cover rounded-md"
+              />
+            ))}
           </div>
-        )}
-      </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const SkillsSection = () => {
       icon: <Database className="h-6 w-6" />,
       skills: [
         "GitHub", "Data visualization", "REST APIs", 
-        "Virtual Machines", "Roboflow", "Data augmentation", "JIRA", "TMUX"
+        "Virtual Machines", "Roboflow", "Data augmentation", "JIRA", "TMUX", "Agile",
       ]
     }
   ];

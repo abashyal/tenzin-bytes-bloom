@@ -17,6 +17,13 @@ const EducationSection = () => {
       location: "Melbourne, Australia", 
       period: "Jul 2024 - Nov 2024",
       status: "Completed"
+    },
+    {
+      institution: "United World College, International School At Asia Karuizawa",
+      degree: "High School, International Baccalaureate",
+      location: "Nagano, Japan", 
+      period: "Aug 2020 - May 2022",
+      status: "Completed"
     }
   ];
 

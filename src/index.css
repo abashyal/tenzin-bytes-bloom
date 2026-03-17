@@ -4,61 +4,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Watercolor Portfolio - Tenzin Uden
-   Warm parchment background, soft painted card hues, terracotta accent.
+/* Bento Grid Portfolio - Tenzin Uden
+   Cool watercolor theme — soft blues, teal accents, slate text
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Warm parchment background */
-    --background: 38 22% 91%;
-    --foreground: 25 18% 12%;
+    /* Soft blue-white background */
+    --background: 210 40% 92%;
+    --foreground: 215 45% 12%;        /* deep cool navy — main text */
 
-    /* Default card — dusty blue-gray */
-    --card: 212 18% 84%;
-    --card-foreground: 25 18% 12%;
+    /* Dusty blue card */
+    --card: 215 32% 26%;
+    --card-foreground: 200 38% 93%;   /* cool blue-white — text on dark cards */
 
-    --popover: 42 28% 92%;
-    --popover-foreground: 25 18% 12%;
+    --popover: 215 32% 26%;
+    --popover-foreground: 200 38% 93%;
 
-    /* Terracotta primary */
-    --primary: 12 48% 48%;
+    /* Soft teal accent */
+    --primary: 195 55% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 12 48% 36%;
+    --primary-dark: 195 55% 28%;
 
-    --secondary: 35 18% 72%;
-    --secondary-foreground: 25 18% 12%;
+    --secondary: 210 25% 55%;
+    --secondary-foreground: 215 45% 12%;
 
-    --muted: 35 14% 82%;
-    --muted-foreground: 25 12% 40%;
+    --muted: 210 22% 75%;
+    --muted-foreground: 215 28% 42%;  /* muted cool slate */
 
-    --accent: 148 18% 76%;
-    --accent-foreground: 148 28% 12%;
+    --accent: 175 40% 52%;
+    --accent-foreground: 215 45% 12%;
 
     --destructive: 0 72% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 14% 74%;
-    --input: 35 14% 74%;
-    --ring: 12 48% 48%;
+    --border: 210 22% 78%;
+    --input: 210 22% 78%;
+    --ring: 195 55% 40%;
 
-    /* Watercolor card tokens */
-    --card-cream-bg: 42 32% 90%;
-    --card-cream-fg: 25 18% 12%;
+    /* Light card tokens */
+    --card-cream-bg: 210 45% 95%;
+    --card-cream-fg: 215 45% 12%;     /* same deep navy for light cards */
 
-    --card-sage-bg: 148 18% 82%;
-    --card-sage-fg: 148 28% 12%;
-
-    --card-peach-bg: 22 28% 85%;
-    --card-peach-fg: 20 25% 12%;
-
-    --card-lavender-bg: 268 14% 83%;
-    --card-lavender-fg: 268 22% 12%;
-
-    /* Stripe — warm coral for YouTube card */
-    --stripe-a: hsl(12, 42%, 50%);
-    --stripe-b: hsl(12, 36%, 40%);
+    /* Stripe colors — teal/slate */
+    --stripe-a: #2a7f8f;
+    --stripe-b: #1e6370;
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s ease-out;

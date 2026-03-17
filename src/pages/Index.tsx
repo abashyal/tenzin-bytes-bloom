@@ -149,8 +149,8 @@ const Index = () => {
           </div>
         </div>
 
-        {/* 3. LINKS CARD — peach */}
-        <div className="col-span-1 bento-peach rounded-2xl p-5 flex flex-col justify-between min-h-[200px]">
+        {/* 3. LINKS CARD — dark, 1 col */}
+        <div className="col-span-1 bg-card text-card-foreground rounded-2xl p-5 flex flex-col justify-between min-h-[200px]">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Connect</div>
           <div className="flex flex-col gap-3">
             <a href="mailto:udent@whitman.edu" className="flex items-center gap-2 text-sm hover:opacity-70 transition-opacity">
@@ -214,14 +214,134 @@ const Index = () => {
           </div>
         </div>
 
-        {/* ── ROW 3 ──────────────────────────────────────────── */}
+        {/* 6. EDUCATION CARD — dark, 1 col */}
+        <div className="col-span-1 bg-card text-card-foreground rounded-2xl p-5">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-3">Education</div>
+          <div className="space-y-4">
+            <div>
+              <div className="font-bold text-sm">Whitman College</div>
+              <div className="text-xs opacity-55">BA CS & Economics</div>
+              <div className="text-xs opacity-35 mt-0.5 flex items-center gap-1">
+                <MapPin className="h-3 w-3" /> Walla Walla, WA · 2022–2026
+              </div>
+              <div className="text-xs font-semibold opacity-55 mt-1">GPA 3.85</div>
+            </div>
+            <div className="pt-3 border-t border-white/10">
+              <div className="font-bold text-sm">Univ. of Melbourne</div>
+              <div className="text-xs opacity-55">Study Abroad</div>
+              <div className="text-xs opacity-35 mt-0.5 flex items-center gap-1">
+                <MapPin className="h-3 w-3" /> Melbourne, AU · 2024
+              </div>
+            </div>
+            <div className="pt-3 border-t border-white/10">
+              <div className="font-bold text-sm">United World College, International School of Asia Karuizawa</div>
+              <div className="text-xs opacity-55">High School, International Baccalaureate</div>
+              <div className="text-xs opacity-35 mt-0.5 flex items-center gap-1">
+                <MapPin className="h-3 w-3" /> Nagano, Japan · 2020–2022
+              </div>
+            </div>
+          </div>
+        </div>
 
-        {/* 7. WORLD MAP CARD — cream, 2 cols */}
-        <div className="col-span-2 bento-cream rounded-2xl p-5 min-h-[260px]">
+        {/* 7. LEADERSHIP CARD — cream, 1 col */}
+        <div className="col-span-1 bento-cream rounded-2xl p-5 flex flex-col justify-between">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Leadership</div>
+          <div className="mt-3">
+            <div className="font-bold text-sm">Finance Committee</div>
+            <div className="text-xs opacity-55 mt-0.5">ASWC · Whitman College</div>
+            <div className="text-xs opacity-40 mt-0.5">Jan – May 2024</div>
+          </div>
+          <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-black/10">
+            <div className="text-center">
+              <div className="text-lg font-black">$800K</div>
+              <div className="text-[10px] opacity-45 uppercase tracking-wide">Budget</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg font-black">1,500+</div>
+              <div className="text-[10px] opacity-45 uppercase tracking-wide">Students</div>
+            </div>
+          </div>
+        </div>
+
+        {/* 8. EXPERIENCE CARD — dark, 3 cols */}
+        <div className="col-span-3 bg-card text-card-foreground rounded-2xl p-6">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Experience</div>
+          <div className="space-y-4">
+            {experiences.map((exp, i) => (
+              <div key={i} className="flex justify-between items-start pb-3 border-b border-white/10 last:border-0 last:pb-0">
+                <div className="flex-1 min-w-0 pr-3">
+                  <div className="font-bold text-sm">{exp.company}</div>
+                  <div className="text-xs opacity-55">{exp.role}</div>
+                  <div className="text-xs opacity-40 mt-0.5">{exp.detail}</div>
+                </div>
+                <div className="text-xs opacity-35 whitespace-nowrap shrink-0">{exp.period}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 9. SKILLS CARD — cream, 2 cols */}
+        <div className="col-span-2 bento-cream rounded-2xl p-6">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Skills & Tools</div>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <span key={skill} className="px-3 py-1 rounded-full text-xs font-semibold bg-black/10 hover:bg-black/15 transition-colors cursor-default">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* 10. CONTACT CARD — dark, 2 cols */}
+        <div className="col-span-2 bg-card text-card-foreground rounded-2xl p-6">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Get In Touch</div>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a href="mailto:udent@whitman.edu" className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group flex-1">
+              <Mail className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+              <div>
+                <div className="text-xs font-semibold opacity-50">Email</div>
+                <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">udent@whitman.edu</div>
+              </div>
+            </a>
+            <a href="https://github.com/Tenzinyo" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group flex-1">
+              <Github className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+              <div>
+                <div className="text-xs font-semibold opacity-50">GitHub</div>
+                <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">github.com/Tenzinyo</div>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/tenzin-uden" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group flex-1">
+              <Linkedin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+              <div>
+                <div className="text-xs font-semibold opacity-50">LinkedIn</div>
+                <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">tenzin-uden</div>
+              </div>
+            </a>
+          </div>
+          <p className="text-xs opacity-35 mt-4">Based in Walla Walla, WA · Open to remote opportunities worldwide</p>
+        </div>
+
+        {/* 11. WORLD MAP CARD — cream, 2 cols × 2 rows */}
+        <div className="col-span-2 row-span-2 bento-cream rounded-2xl p-5 min-h-[260px]">
           <WorldMapCard />
         </div>
 
-        {/* 8. YOUTUBE CARD — stripe, 1 col */}
+        {/* 12. JOURNEY CARD — dark, 1 col × 2 rows */}
+        <div className="col-span-1 row-span-2 bg-card text-card-foreground rounded-2xl p-5 flex flex-col gap-3">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Her Journey</div>
+          <p className="text-xs leading-relaxed opacity-75 flex-1">
+            From the monasteries of <strong>Bhutan</strong> to coding camps in <strong>Cambodia</strong>,
+            classrooms in <strong>Australia</strong>, and rice fields in <strong>Japan</strong> — Tenzin's
+            path has never been a straight line. Each country taught her something no textbook could.
+          </p>
+          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
+            {['🇧🇹 Bhutan', '🇰🇭 Cambodia', '🇦🇺 Australia', '🇯🇵 Japan', '🇮🇳 India', '🇺🇸 USA'].map((c) => (
+              <span key={c} className="text-xs px-2 py-0.5 rounded-full bg-white/8 opacity-80">{c}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* 13. YOUTUBE CARD — stripe accent, 1 col */}
         <div className="col-span-1 bento-stripe rounded-2xl p-5 flex flex-col justify-between">
           <div className="text-[10px] font-semibold uppercase tracking-widest text-white/60">YouTube</div>
           <div className="flex flex-col gap-2">
@@ -241,154 +361,9 @@ const Index = () => {
           </a>
         </div>
 
-        {/* 9. ANIME QUIZ CARD — cream */}
-        <div className="col-span-1 bento-cream rounded-2xl p-5 min-h-[260px]">
+        {/* 14. ANIME QUIZ CARD — dark, 1 col */}
+        <div className="col-span-1 bg-card text-card-foreground rounded-2xl p-5">
           <AnimeQuizCard />
-        </div>
-
-        {/* ── ROW 4 ──────────────────────────────────────────── */}
-
-        {/* 10. TECH BOX — full width, tabbed */}
-        <div className="col-span-2 lg:col-span-4 bento-cream rounded-2xl p-6">
-          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">
-            Work &amp; Skills
-          </div>
-          <Tabs defaultValue="experience">
-            <TabsList className="mb-5 bg-black/5 border border-black/8">
-              <TabsTrigger value="experience" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                Experience
-              </TabsTrigger>
-              <TabsTrigger value="education" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                Education
-              </TabsTrigger>
-              <TabsTrigger value="skills" className="text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                Skills
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="experience">
-              <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                {experiences.slice(0, 2).map((exp, i) => (
-                  <div
-                    key={i}
-                    className={`flex-1 p-4 rounded-xl border ${
-                      exp.upcoming ? 'border-primary/40 bg-primary/5' : 'border-black/8 bg-black/4'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-2 mb-1">
-                      <div className="font-bold text-sm leading-snug">{exp.company}</div>
-                      {exp.upcoming && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/20 text-primary font-semibold shrink-0">
-                          Upcoming
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-xs opacity-55 mb-1">{exp.role}</div>
-                    <div className="flex items-center gap-1 text-[10px] opacity-35">
-                      <MapPin className="h-2.5 w-2.5" />{exp.location} · {exp.period}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <button
-                onClick={() => navigate('/experience')}
-                className="w-full flex items-center justify-between px-5 py-4 rounded-xl border border-black/8 bg-black/4 hover:bg-black/6 hover:border-black/15 transition-all group"
-              >
-                <span className="text-sm font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
-                  See all 4 roles — Dell, HiddenLayer, Bhutan, Cambodia
-                </span>
-                <ArrowRight className="h-4 w-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-              </button>
-            </TabsContent>
-
-            <TabsContent value="education">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {education.map((edu, i) => (
-                  <div
-                    key={i}
-                    className={`p-4 rounded-xl border ${
-                      edu.current ? 'border-primary/40 bg-primary/5' : 'border-black/8 bg-black/4'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-2 mb-1">
-                      <div className="font-bold text-sm">{edu.school}</div>
-                      {edu.current && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/20 text-primary font-semibold shrink-0">
-                          Current
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-xs opacity-55 mb-1">{edu.degree}</div>
-                    <div className="flex items-center gap-1 text-[10px] opacity-35">
-                      <MapPin className="h-2.5 w-2.5" />{edu.location} · {edu.period}
-                    </div>
-                    {edu.gpa && (
-                      <div className="text-xs font-semibold opacity-55 mt-2">GPA {edu.gpa}</div>
-                    )}
-                  </div>
-                ))}
-                {/* Leadership folded in here */}
-                <div className="p-4 rounded-xl border border-black/8 bg-black/4">
-                  <div className="font-bold text-sm mb-1">Finance Committee — ASWC</div>
-                  <div className="text-xs opacity-55 mb-1">Whitman College · Jan – May 2024</div>
-                  <div className="flex gap-4 pt-2 mt-2 border-t border-black/8">
-                    <div className="text-center">
-                      <div className="font-black text-base">$800K</div>
-                      <div className="text-[10px] opacity-40 uppercase tracking-wide">Budget</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="font-black text-base">1,500+</div>
-                      <div className="text-[10px] opacity-40 uppercase tracking-wide">Students</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="skills">
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 rounded-full text-xs font-semibold bg-black/6 border border-black/8 hover:bg-black/10 transition-colors cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-
-        {/* ── ROW 5 ──────────────────────────────────────────── */}
-
-        {/* 11. CONTACT CARD — full width */}
-        <div className="col-span-2 lg:col-span-4 bento-peach rounded-2xl p-6">
-          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Get In Touch</div>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a href="mailto:udent@whitman.edu" className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-black/8 hover:bg-black/6 transition-all group flex-1">
-              <Mail className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              <div>
-                <div className="text-xs font-semibold opacity-50">Email</div>
-                <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">udent@whitman.edu</div>
-              </div>
-            </a>
-            <a href="https://github.com/Tenzinyo" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-black/8 hover:bg-black/6 transition-all group flex-1">
-              <Github className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              <div>
-                <div className="text-xs font-semibold opacity-50">GitHub</div>
-                <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">github.com/Tenzinyo</div>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/in/tenzin-uden" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-black/8 hover:bg-black/6 transition-all group flex-1">
-              <Linkedin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              <div>
-                <div className="text-xs font-semibold opacity-50">LinkedIn</div>
-                <div className="text-xs opacity-70 group-hover:opacity-100 transition-opacity">tenzin-uden</div>
-              </div>
-            </a>
-          </div>
-          <p className="text-xs opacity-25 mt-4">Based in Walla Walla, WA · Open to remote opportunities worldwide</p>
         </div>
 
       </div>
