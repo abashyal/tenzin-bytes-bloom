@@ -62,6 +62,19 @@ const Index = () => {
     setTimeout(() => setSelectedExp(null), 380);
   };
 
+  const [leadershipOpen, setLeadershipOpen] = useState(false);
+  const [leadershipVisible, setLeadershipVisible] = useState(false);
+
+  const openLeadership = () => {
+    setLeadershipOpen(true);
+    requestAnimationFrame(() => requestAnimationFrame(() => setLeadershipVisible(true)));
+  };
+
+  const closeLeadership = () => {
+    setLeadershipVisible(false);
+    setTimeout(() => setLeadershipOpen(false), 380);
+  };
+
   useEffect(() => {
     const t = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(t);
@@ -300,12 +313,16 @@ const Index = () => {
         {/* ── ROW 3 ──────────────────────────────────────────── */}
 
         {/* 7. LEADERSHIP CARD */}
-        <div
-          className="col-span-1 bento-cream rounded-xl p-5 flex flex-col justify-between comic-panel comic-reveal"
+        <button
+          onClick={openLeadership}
+          className="col-span-1 bento-cream rounded-xl p-5 flex flex-col justify-between comic-panel comic-reveal text-left active:scale-[0.98] transition-transform"
           style={{ animationDelay: '0.05s' }}
         >
           <div className="panel-badge">P.07</div>
-          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">{t('leadership')}</div>
+          <div className="flex items-center justify-between">
+            <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">{t('leadership')}</div>
+            <span className="text-[9px] opacity-35 font-semibold">👆 tap</span>
+          </div>
           <div className="mt-3">
             <div className="font-bold text-sm">Finance Committee</div>
             <div className="text-xs opacity-55 mt-0.5">ASWC · Whitman College</div>
@@ -321,7 +338,7 @@ const Index = () => {
               <div className="text-[10px] opacity-45 uppercase tracking-wide">{t('students')}</div>
             </div>
           </div>
-        </div>
+        </button>
 
         {/* 8. EXPERIENCE CARD */}
         <div
@@ -672,6 +689,120 @@ const Index = () => {
                     {tag}
                   </span>
                 ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ── LEADERSHIP DETAIL DRAWER ───────────────────────── */}
+      {leadershipOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40"
+            style={{
+              background: 'rgba(0,0,0,0.55)',
+              backdropFilter: 'blur(3px)',
+              opacity: leadershipVisible ? 1 : 0,
+              transition: 'opacity 0.25s ease',
+            }}
+            onClick={closeLeadership}
+          />
+
+          {/* Drawer panel */}
+          <div
+            className="fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl overflow-hidden"
+            style={{
+              background: 'hsl(265 35% 88%)',
+              border: '3px solid #1a1a1a',
+              borderBottom: 'none',
+              boxShadow: '0 -5px 0 #1a1a1a',
+              transform: leadershipVisible ? 'translateY(0)' : 'translateY(100%)',
+              transition: 'transform 0.38s cubic-bezier(0.34, 1.28, 0.64, 1)',
+              maxHeight: '82vh',
+              overflowY: 'auto',
+            }}
+          >
+            {/* Drag handle */}
+            <div className="flex justify-center pt-3 pb-1">
+              <div className="w-10 h-1 rounded-full bg-black/20" />
+            </div>
+
+            <div className="px-5 pb-8 pt-2">
+              {/* Header row */}
+              <div
+                className="drawer-item flex items-start justify-between mb-4"
+                style={{ animationDelay: '0.05s' }}
+              >
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span
+                      className="panel-action"
+                      style={{ position: 'static', transform: 'rotate(-4deg)', animation: 'none' }}
+                    >
+                      LEAD!
+                    </span>
+                  </div>
+                  <h2
+                    className="font-comic leading-none"
+                    style={{ fontSize: '2rem', color: 'hsl(215 45% 12%)' }}
+                  >
+                    Finance Committee
+                  </h2>
+                  <p className="text-sm font-semibold opacity-60 mt-0.5">ASWC · Whitman College</p>
+                </div>
+                <button
+                  onClick={closeLeadership}
+                  className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors border border-black/20 mt-1"
+                  aria-label="Close"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+
+              {/* Meta row */}
+              <div
+                className="drawer-item flex flex-wrap gap-3 text-xs opacity-55 mb-4"
+                style={{ animationDelay: '0.1s' }}
+              >
+                <span className="flex items-center gap-1">
+                  <Calendar className="h-3 w-3" /> Jan – May 2024
+                </span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="h-3 w-3" /> Walla Walla, WA
+                </span>
+              </div>
+
+              {/* Divider */}
+              <div
+                className="drawer-item border-t-2 border-black/15 mb-4"
+                style={{ animationDelay: '0.13s' }}
+              />
+
+              {/* Description */}
+              <p
+                className="drawer-item text-sm leading-relaxed opacity-80 mb-5"
+                style={{ animationDelay: '0.16s' }}
+              >
+                Managed an $800,000 budget, overseeing student fees and finance requests, introducing
+                a mid-year review system to improve budget allocations for clubs, boosting financial
+                support and transparency for a student body of 1,500.
+              </p>
+
+              {/* Stats */}
+              <div
+                className="drawer-item flex gap-4"
+                style={{ animationDelay: '0.22s' }}
+              >
+                <div className="flex-1 rounded-xl border-2 border-black/15 bg-black/5 p-3 text-center">
+                  <div className="font-comic text-2xl" style={{ color: 'hsl(215 45% 12%)' }}>$800K</div>
+                  <div className="text-[11px] opacity-55 font-semibold mt-0.5">Budget Managed</div>
+                </div>
+                <div className="flex-1 rounded-xl border-2 border-black/15 bg-black/5 p-3 text-center">
+                  <div className="font-comic text-2xl" style={{ color: 'hsl(215 45% 12%)' }}>1,500+</div>
+                  <div className="text-[11px] opacity-55 font-semibold mt-0.5">Students Served</div>
+                </div>
               </div>
             </div>
           </div>
