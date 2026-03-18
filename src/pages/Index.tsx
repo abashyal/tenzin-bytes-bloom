@@ -272,7 +272,7 @@ const Index = () => {
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">The Journey</div>
           <p className="text-sm md:text-base leading-relaxed opacity-85 flex-1 mt-3">
             Grew up in <strong>Bhutan</strong>. High school in a UWC in <strong>Japan</strong>. College in the{' '}
-            <strong>US</strong>. A semester in <strong>Australia</strong> and working as a code camp facilitator at Cambodia. Each country handed me
+            <strong>US</strong>. A semester in <strong>Australia</strong> and working as a code camp facilitator at <strong>Cambodia</strong>. Each country handed me
             something different, a new language, a new way of seeing, a new version of myself.
             If there's one thing all that moving around taught me, it's that life is just one long
             lesson, and the classroom keeps changing. 
