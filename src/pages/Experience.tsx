@@ -1,66 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, MapPin, Calendar, ExternalLink } from 'lucide-react';
-
-const experiences = [
-  {
-    company: 'Dell Technologies',
-    role: 'Software Engineering Intern',
-    period: 'May 2025 – Aug 2025',
-    location: 'Austin, TX',
-    upcoming: true,
-    description:
-      "Joining Dell's PowerScale team to work on storage infrastructure software. Automating cryptographic inventory on OneFS — the distributed file system that powers Dell's enterprise NAS solutions — and building audit-compliant reporting tools.",
-    highlights: [
-      'Automating cryptographic inventory across PowerScale OneFS',
-      'Building audit-compliant reporting pipelines',
-      "Working within Dell's enterprise storage engineering team",
-    ],
-    tags: ['Go', 'Systems', 'Cryptography', 'Storage'],
-  },
-  {
-    company: 'HiddenLayer',
-    role: 'Software Engineering Intern',
-    period: 'May 2024 – Jul 2024',
-    location: 'Remote',
-    description:
-      'HiddenLayer is an AI security company protecting machine learning models from adversarial attacks and theft. Worked on the backend platform, focused on improving code quality and test coverage in Go.',
-    highlights: [
-      'Increased Go code coverage from 55% to 65% across the backend',
-      'Improved backend development practices and testing discipline',
-      'Contributed to the AI security platform used by enterprise clients',
-    ],
-    tags: ['Go', 'AI Security', 'Backend', 'Testing'],
-  },
-  {
-    company: 'Druk Holdings & Investments',
-    role: 'AI / ML Intern',
-    period: 'Aug 2023',
-    location: 'Thimphu, Bhutan',
-    description:
-      "Druk Holdings is Bhutan's largest state-owned enterprise. As an AI/ML intern, I worked on a computer vision project to monitor and analyze urban traffic — using the streets I grew up on as the dataset.",
-    highlights: [
-      'Co-developed a YOLOv5 traffic monitoring model achieving 87% precision',
-      'Implemented computer vision pipelines for urban planning insights',
-      'Collaborated with an international development team across time zones',
-    ],
-    tags: ['Python', 'YOLOv5', 'Computer Vision', 'Machine Learning'],
-  },
-  {
-    company: 'Kirirom Institute of Technology',
-    role: 'Software Intern & Code Camp Facilitator',
-    period: 'Apr 2023 – Aug 2023',
-    location: 'Phnom Penh, Cambodia',
-    description:
-      "KIT is a Japanese-Cambodian university focused on practical software education. I wore two hats: software intern and code camp facilitator for beginner programmers. Teaching was the more memorable half.",
-    highlights: [
-      'Facilitated Python code camps for 10+ beginner programmers',
-      'Led 5 hands-on project builds from idea to working prototype',
-      'Achieved >90% student pass rate across all sessions',
-      'Developed curriculum tailored for students with zero prior experience',
-    ],
-    tags: ['Python', 'Teaching', 'Curriculum Design', 'Mentorship'],
-  },
-];
+import { experiences } from '@/data/experiences';
 
 const Experience = () => {
   const navigate = useNavigate();
@@ -101,22 +41,13 @@ const Experience = () => {
           {experiences.map((exp, i) => (
             <div
               key={i}
-              className={`rounded-2xl p-6 sm:p-8 border transition-all ${
-                exp.upcoming
-                  ? 'bg-primary/8 border-primary/30'
-                  : 'bg-card border-black/6 hover:border-black/12'
-              }`}
+              className="rounded-2xl p-6 sm:p-8 border transition-all bg-card border-black/6 hover:border-black/12"
             >
               {/* Top row */}
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
                 <div>
                   <div className="flex items-center gap-2 flex-wrap mb-1">
                     <h2 className="text-xl font-black">{exp.company}</h2>
-                    {exp.upcoming && (
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-bold uppercase tracking-wide border border-primary/30">
-                        Upcoming
-                      </span>
-                    )}
                   </div>
                   <p className="text-sm font-semibold opacity-55">{exp.role}</p>
                 </div>
