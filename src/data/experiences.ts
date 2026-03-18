@@ -11,7 +11,7 @@ export const experiences = [
     highlights: [
       'Automated cryptographic inventory across PowerScale OneFS',
       'Built audit-compliant reporting pipelines',
-      "Worked within Dell's enterprise storage engineering team",
+      "Worked within Dell's unstructured data solutions team",
     ],
     tags: ['Go', 'Systems', 'Cryptography', 'Storage'],
     action: 'LEVEL UP!',

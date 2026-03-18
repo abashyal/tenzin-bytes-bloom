@@ -31,7 +31,7 @@ const Experience = () => {
             Where I've worked
           </h1>
           <p className="text-base opacity-50 max-w-xl leading-relaxed">
-            Four internships across four countries — each one a different domain, a different
+            Four internships across four countries, each one a different domain, a different
             timezone, and a different way of thinking about software.
           </p>
         </div>
