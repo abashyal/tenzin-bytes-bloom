@@ -178,7 +178,7 @@ const Index = () => {
           <img src={headshotImage} alt="Tenzin Uden" className="w-full h-full object-cover object-top" />
         </div>
 
-        {/* 5. LIVE TIME CARD — lavender */}
+        {/* 5. LIVE TIME CARD — lavender (left of education) */}
         <div className="col-span-1 bento-lavender rounded-2xl p-5 flex flex-col justify-between min-h-[240px]">
           <div className="flex items-center gap-2">
             <div className={`w-2 h-2 rounded-full animate-pulse ${isDay ? 'bg-amber-400' : 'bg-indigo-400'}`} />
@@ -197,25 +197,8 @@ const Index = () => {
           <div className="text-3xl">{isDay ? '☀️' : '🌙'}</div>
         </div>
 
-        {/* 6. JOURNEY STORY CARD — cream, 2 cols */}
-        <div className="col-span-2 bento-cream rounded-2xl p-6 flex flex-col justify-between min-h-[240px]">
-          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">The Journey</div>
-          <p className="text-sm md:text-base leading-relaxed opacity-85 flex-1 mt-3">
-            Grew up in <strong>Bhutan</strong>. High school in <strong>Japan</strong>. College in the{' '}
-            <strong>US</strong>. A semester in <strong>Australia</strong>. Each country handed me
-            something different — a new language, a new way of seeing, a new version of myself.
-            If there's one thing all that moving around taught me, it's that life is just one long
-            lesson, and the classroom keeps changing.
-          </p>
-          <div className="flex flex-wrap gap-2 pt-4 border-t border-black/10 mt-4">
-            {['🇧🇹 Bhutan', '🇯🇵 Japan', '🇺🇸 USA', '🇦🇺 Australia'].map((c) => (
-              <span key={c} className="text-xs px-2.5 py-1 rounded-full bg-black/10 font-medium">{c}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* 6. EDUCATION CARD — dark, 1 col */}
-        <div className="col-span-1 bg-card text-card-foreground rounded-2xl p-5">
+        {/* 6. EDUCATION CARD — dark, 2 cols */}
+        <div className="col-span-2 bg-card text-card-foreground rounded-2xl p-5">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-3">Education</div>
           <div className="space-y-4">
             <div>
@@ -243,7 +226,9 @@ const Index = () => {
           </div>
         </div>
 
-        {/* 7. LEADERSHIP CARD — cream, 1 col */}
+        {/* ── ROW 3 ──────────────────────────────────────────── */}
+
+        {/* 7. LEADERSHIP CARD — cream, 1 col (left) */}
         <div className="col-span-1 bento-cream rounded-2xl p-5 flex flex-col justify-between">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Leadership</div>
           <div className="mt-3">
@@ -263,7 +248,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* 8. EXPERIENCE CARD — dark, 3 cols */}
+        {/* 8. EXPERIENCE CARD — dark, 3 cols (right) */}
         <div className="col-span-3 bg-card text-card-foreground rounded-2xl p-6">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Experience</div>
           <div className="space-y-4">
@@ -280,8 +265,44 @@ const Index = () => {
           </div>
         </div>
 
-        {/* 9. SKILLS CARD — cream, 2 cols */}
-        <div className="col-span-2 bento-cream rounded-2xl p-6">
+        {/* ── ROW 4 ──────────────────────────────────────────── */}
+
+        {/* 9. HER JOURNEY CARD — dark, 1 col × 2 rows (below experience) */}
+        <div className="col-span-1 row-span-2 bg-card text-card-foreground rounded-2xl p-5 flex flex-col gap-3">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Her Journey</div>
+          <p className="text-xs leading-relaxed opacity-75 flex-1">
+            From the monasteries of <strong>Bhutan</strong> to coding camps in <strong>Cambodia</strong>,
+            classrooms in <strong>Australia</strong>, and rice fields in <strong>Japan</strong> — Tenzin's
+            path has never been a straight line. Each country taught her something no textbook could.
+          </p>
+          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
+            {['🇧🇹 Bhutan', '🇰🇭 Cambodia', '🇦🇺 Australia', '🇯🇵 Japan', '🇮🇳 India', '🇺🇸 USA'].map((c) => (
+              <span key={c} className="text-xs px-2 py-0.5 rounded-full bg-white/8 opacity-80">{c}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* 10. JOURNEY STORY CARD — cream, 3 cols */}
+        <div className="col-span-3 bento-cream rounded-2xl p-6 flex flex-col justify-between min-h-[240px]">
+          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">The Journey</div>
+          <p className="text-sm md:text-base leading-relaxed opacity-85 flex-1 mt-3">
+            Grew up in <strong>Bhutan</strong>. High school in <strong>Japan</strong>. College in the{' '}
+            <strong>US</strong>. A semester in <strong>Australia</strong>. Each country handed me
+            something different — a new language, a new way of seeing, a new version of myself.
+            If there's one thing all that moving around taught me, it's that life is just one long
+            lesson, and the classroom keeps changing.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-4 border-t border-black/10 mt-4">
+            {['🇧🇹 Bhutan', '🇯🇵 Japan', '🇺🇸 USA', '🇦🇺 Australia'].map((c) => (
+              <span key={c} className="text-xs px-2.5 py-1 rounded-full bg-black/10 font-medium">{c}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── ROW 5 — Her Journey continues col 1 ──────────── */}
+
+        {/* 11. SKILLS CARD — cream, 3 cols */}
+        <div className="col-span-3 bento-cream rounded-2xl p-6">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Skills & Tools</div>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
@@ -292,7 +313,41 @@ const Index = () => {
           </div>
         </div>
 
-        {/* 10. CONTACT CARD — dark, 2 cols */}
+        {/* ── ROW 6 — YouTube + Anime left, Map right ──────── */}
+
+        {/* 12. YOUTUBE CARD — stripe accent, 1 col */}
+        <div className="col-span-1 bento-stripe rounded-2xl p-5 flex flex-col justify-between">
+          <div className="text-[10px] font-semibold uppercase tracking-widest text-white/60">YouTube</div>
+          <div className="flex flex-col gap-2">
+            <Youtube className="h-8 w-8 text-white" />
+            <div className="font-bold text-white text-base leading-snug">@tenzinla_<br />mountaingoat</div>
+            <p className="text-xs text-white/70 leading-relaxed">
+              Life at the crossroads of mountains & code. Travel, culture & adventures.
+            </p>
+          </div>
+          <a
+            href="https://www.youtube.com/@tenzinla_mountaingoat/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-xs font-semibold text-white"
+          >
+            <Globe className="h-3.5 w-3.5" /> Visit Channel →
+          </a>
+        </div>
+
+        {/* 13. ANIME QUIZ CARD — dark, 1 col */}
+        <div className="col-span-1 bg-card text-card-foreground rounded-2xl p-5">
+          <AnimeQuizCard />
+        </div>
+
+        {/* 14. WORLD MAP CARD — cream, 2 cols × 2 rows (right) */}
+        <div className="col-span-2 row-span-2 bento-cream rounded-2xl p-5 min-h-[260px]">
+          <WorldMapCard />
+        </div>
+
+        {/* ── ROW 7 — Contact left, Map continues right ─────── */}
+
+        {/* 15. CONTACT CARD — dark, 2 cols */}
         <div className="col-span-2 bg-card text-card-foreground rounded-2xl p-6">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Get In Touch</div>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -319,51 +374,6 @@ const Index = () => {
             </a>
           </div>
           <p className="text-xs opacity-35 mt-4">Based in Walla Walla, WA · Open to remote opportunities worldwide</p>
-        </div>
-
-        {/* 11. WORLD MAP CARD — cream, 2 cols × 2 rows */}
-        <div className="col-span-2 row-span-2 bento-cream rounded-2xl p-5 min-h-[260px]">
-          <WorldMapCard />
-        </div>
-
-        {/* 12. JOURNEY CARD — dark, 1 col × 2 rows */}
-        <div className="col-span-1 row-span-2 bg-card text-card-foreground rounded-2xl p-5 flex flex-col gap-3">
-          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Her Journey</div>
-          <p className="text-xs leading-relaxed opacity-75 flex-1">
-            From the monasteries of <strong>Bhutan</strong> to coding camps in <strong>Cambodia</strong>,
-            classrooms in <strong>Australia</strong>, and rice fields in <strong>Japan</strong> — Tenzin's
-            path has never been a straight line. Each country taught her something no textbook could.
-          </p>
-          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-            {['🇧🇹 Bhutan', '🇰🇭 Cambodia', '🇦🇺 Australia', '🇯🇵 Japan', '🇮🇳 India', '🇺🇸 USA'].map((c) => (
-              <span key={c} className="text-xs px-2 py-0.5 rounded-full bg-white/8 opacity-80">{c}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* 13. YOUTUBE CARD — stripe accent, 1 col */}
-        <div className="col-span-1 bento-stripe rounded-2xl p-5 flex flex-col justify-between">
-          <div className="text-[10px] font-semibold uppercase tracking-widest text-white/60">YouTube</div>
-          <div className="flex flex-col gap-2">
-            <Youtube className="h-8 w-8 text-white" />
-            <div className="font-bold text-white text-base leading-snug">@tenzinla_<br />mountaingoat</div>
-            <p className="text-xs text-white/70 leading-relaxed">
-              Life at the crossroads of mountains & code. Travel, culture & adventures.
-            </p>
-          </div>
-          <a
-            href="https://www.youtube.com/@tenzinla_mountaingoat/videos"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-lg text-xs font-semibold text-white"
-          >
-            <Globe className="h-3.5 w-3.5" /> Visit Channel →
-          </a>
-        </div>
-
-        {/* 14. ANIME QUIZ CARD — dark, 1 col */}
-        <div className="col-span-1 bg-card text-card-foreground rounded-2xl p-5">
-          <AnimeQuizCard />
         </div>
 
       </div>
