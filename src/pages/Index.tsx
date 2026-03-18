@@ -267,23 +267,8 @@ const Index = () => {
 
         {/* ── ROW 4 ──────────────────────────────────────────── */}
 
-        {/* 9. HER JOURNEY CARD — dark, 1 col × 2 rows (below experience) */}
-        <div className="col-span-1 row-span-2 bg-card text-card-foreground rounded-2xl p-5 flex flex-col gap-3">
-          <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">Her Journey</div>
-          <p className="text-xs leading-relaxed opacity-75 flex-1">
-            From the monasteries of <strong>Bhutan</strong> to coding camps in <strong>Cambodia</strong>,
-            classrooms in <strong>Australia</strong>, and rice fields in <strong>Japan</strong> — Tenzin's
-            path has never been a straight line. Each country taught her something no textbook could.
-          </p>
-          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-            {['🇧🇹 Bhutan', '🇰🇭 Cambodia', '🇦🇺 Australia', '🇯🇵 Japan', '🇮🇳 India', '🇺🇸 USA'].map((c) => (
-              <span key={c} className="text-xs px-2 py-0.5 rounded-full bg-white/8 opacity-80">{c}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* 10. JOURNEY STORY CARD — cream, 3 cols */}
-        <div className="col-span-3 bento-cream rounded-2xl p-6 flex flex-col justify-between min-h-[240px]">
+        {/* 10. JOURNEY STORY CARD — cream, 4 cols */}
+        <div className="col-span-4 bento-cream rounded-2xl p-6 flex flex-col justify-between min-h-[240px]">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">The Journey</div>
           <p className="text-sm md:text-base leading-relaxed opacity-85 flex-1 mt-3">
             Grew up in <strong>Bhutan</strong>. High school in <strong>Japan</strong>. College in the{' '}
@@ -299,10 +284,10 @@ const Index = () => {
           </div>
         </div>
 
-        {/* ── ROW 5 — Her Journey continues col 1 ──────────── */}
+        {/* ── ROW 5 ──────────────────────────────────────────── */}
 
-        {/* 11. SKILLS CARD — cream, 3 cols */}
-        <div className="col-span-3 bento-cream rounded-2xl p-6">
+        {/* 11. SKILLS CARD — cream, 4 cols */}
+        <div className="col-span-4 bento-cream rounded-2xl p-6">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40 mb-4">Skills & Tools</div>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
