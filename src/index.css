@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Bento Grid Portfolio - Tenzin Uden
-   Cool watercolor theme — soft blues, teal accents, slate text
+   Comic Strip Edition — ink borders, halftone dots, pop-art energy
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Soft blue-white background */
-    --background: 210 40% 92%;
+    /* Newsprint background */
+    --background: 45 40% 93%;
     --foreground: 215 45% 12%;        /* deep cool navy — main text */
 
     /* Dusty blue card */
@@ -44,8 +44,14 @@
     --ring: 195 55% 40%;
 
     /* Light card tokens */
-    --card-cream-bg: 210 45% 95%;
-    --card-cream-fg: 215 45% 12%;     /* same deep navy for light cards */
+    --card-cream-bg: 45 55% 92%;
+    --card-cream-fg: 215 45% 12%;
+
+    --card-sage-bg: 140 30% 85%;
+    --card-sage-fg: 140 35% 20%;
+
+    --card-lavender-bg: 265 35% 88%;
+    --card-lavender-fg: 265 40% 20%;
 
     /* Stripe colors — teal/slate */
     --stripe-a: #2a7f8f;
@@ -54,7 +60,7 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s ease-out;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -75,6 +81,9 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    /* Comic book halftone dot pattern */
+    background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+    background-size: 7px 7px;
   }
 
   html {
@@ -95,19 +104,13 @@
     color: hsl(var(--card-sage-fg));
   }
 
-  /* Warm peach */
-  .bento-peach {
-    background-color: hsl(var(--card-peach-bg));
-    color: hsl(var(--card-peach-fg));
-  }
-
   /* Soft lavender */
   .bento-lavender {
     background-color: hsl(var(--card-lavender-bg));
     color: hsl(var(--card-lavender-fg));
   }
 
-  /* Diagonal stripe — coral for YouTube */
+  /* Diagonal stripe — teal for YouTube */
   .bento-stripe {
     background: repeating-linear-gradient(
       -45deg,
@@ -125,4 +128,178 @@
   .transition-fast {
     transition: var(--transition-fast);
   }
+}
+
+/* =========================================
+   COMIC STRIP THEME
+   ========================================= */
+
+/* Comic heading font */
+.font-comic {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+}
+
+/* Comic panel — thick ink border + offset shadow */
+.comic-panel {
+  border: 3px solid #1a1a1a !important;
+  box-shadow: 5px 5px 0 #1a1a1a;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.comic-panel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #1a1a1a;
+}
+
+/* Scroll-reveal animation */
+@keyframes panel-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.comic-reveal {
+  opacity: 0;
+}
+
+.comic-reveal.revealed {
+  animation: panel-reveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Panel number watermark */
+.panel-badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-family: 'Bangers', cursive;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.18);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Action burst word (POW, ZAP, etc.) */
+@keyframes burst-in {
+  from { transform: rotate(-6deg) scale(0.3); opacity: 0; }
+  to   { transform: rotate(-6deg) scale(1);   opacity: 1; }
+}
+
+.action-burst {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  font-size: 11px;
+  background: #ffe600;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+  padding: 2px 8px;
+  display: inline-block;
+  transform: rotate(-6deg);
+  animation: burst-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  clip-path: polygon(4% 0%, 96% 0%, 100% 20%, 100% 80%, 96% 100%, 4% 100%, 0% 80%, 0% 20%);
+}
+
+/* Speech bubble */
+.speech-bubble {
+  position: relative;
+  background: white;
+  border: 2.5px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 6px 12px;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -17px;
+  left: 18px;
+  border-width: 17px 7px 0 7px;
+  border-style: solid;
+  border-color: #1a1a1a transparent transparent transparent;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 21px;
+  border-width: 12px 4px 0 4px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  z-index: 1;
+}
+
+/* Journey comic strip panels */
+.journey-panel {
+  border-right: 2px solid rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-panel:last-child {
+  border-right: none;
+}
+
+.journey-panel:hover {
+  transform: scale(1.04) translateY(-3px);
+  z-index: 2;
+  filter: brightness(1.04);
+}
+
+/* Panel action label (in journey) */
+@keyframes wobble {
+  0%, 100% { transform: rotate(-4deg) scale(1); }
+  50%       { transform: rotate(-4deg) scale(1.08); }
+}
+
+.panel-action {
+  font-family: 'Bangers', cursive;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  background: #ffe600;
+  color: #1a1a1a;
+  border: 1.5px solid #1a1a1a;
+  padding: 1px 6px;
+  display: inline-block;
+  transform: rotate(-4deg);
+  animation: wobble 2s ease-in-out infinite;
+  clip-path: polygon(4% 0%, 96% 0%, 100% 20%, 100% 80%, 96% 100%, 4% 100%, 0% 80%, 0% 20%);
+}
+
+/* Skill tag pop */
+.skill-tag {
+  display: inline-block;
+  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  transform: scale(1.1) rotate(-2deg);
+  background: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Ink splatter page header */
+.comic-page-header {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 3px;
+  color: rgba(0,0,0,0.12);
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 8px;
 }
