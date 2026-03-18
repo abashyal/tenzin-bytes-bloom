@@ -133,7 +133,7 @@ const Index = () => {
               title={label}
             >
               <span>{flag}</span>
-              <span>{label}</span>
+              <span className="hidden sm:inline">{label}</span>
             </button>
           ))}
         </div>
@@ -315,7 +315,7 @@ const Index = () => {
         {/* 7. LEADERSHIP CARD */}
         <button
           onClick={openLeadership}
-          className="col-span-1 bento-cream rounded-xl p-5 flex flex-col justify-between comic-panel comic-reveal text-left active:scale-[0.98] transition-transform"
+          className="col-span-2 lg:col-span-1 bento-cream rounded-xl p-5 flex flex-col justify-between comic-panel comic-reveal text-left active:scale-[0.98] transition-transform"
           style={{ animationDelay: '0.05s' }}
         >
           <div className="panel-badge">P.07</div>
@@ -342,7 +342,7 @@ const Index = () => {
 
         {/* 8. EXPERIENCE CARD */}
         <div
-          className="col-span-3 bg-card text-card-foreground rounded-xl p-6 comic-panel comic-reveal"
+          className="col-span-2 lg:col-span-3 bg-card text-card-foreground rounded-xl p-6 comic-panel comic-reveal"
           style={{ animationDelay: '0.12s' }}
         >
           <div className="panel-badge" style={{ color: 'rgba(255,255,255,0.2)' }}>P.08</div>
@@ -376,7 +376,7 @@ const Index = () => {
         {/* ── ROW 4 — JOURNEY COMIC STRIP (3 cols) + FUN FACTS (1 col, spans rows 4+5) ── */}
 
         <div
-          className="col-span-3 bento-cream rounded-xl overflow-hidden comic-panel comic-reveal"
+          className="col-span-2 lg:col-span-3 bento-cream rounded-xl overflow-hidden comic-panel comic-reveal"
           style={{ animationDelay: '0.1s' }}
         >
           <div className="panel-badge">P.09</div>
@@ -416,7 +416,7 @@ const Index = () => {
 
         {/* FUN FACTS — col-span-1 row-span-2 */}
         <div
-          className="col-span-1 row-span-2 rounded-xl overflow-hidden comic-panel comic-reveal flex flex-col"
+          className="col-span-2 lg:col-span-1 lg:row-span-2 rounded-xl overflow-hidden comic-panel comic-reveal flex flex-col"
           style={{ animationDelay: '0.15s', background: 'hsl(215 32% 22%)' }}
         >
           <div className="panel-badge" style={{ color: 'rgba(255,255,255,0.2)' }}>P.10</div>
@@ -447,7 +447,7 @@ const Index = () => {
         {/* ── ROW 5 — SKILLS (3 cols, fun facts continues) ────── */}
 
         <div
-          className="col-span-3 bento-cream rounded-xl p-6 comic-panel comic-reveal"
+          className="col-span-2 lg:col-span-3 bento-cream rounded-xl p-6 comic-panel comic-reveal"
           style={{ animationDelay: '0.05s' }}
         >
           <div className="panel-badge">P.11</div>
