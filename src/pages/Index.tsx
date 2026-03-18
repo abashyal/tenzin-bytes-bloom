@@ -271,14 +271,14 @@ const Index = () => {
         <div className="col-span-4 bento-cream rounded-2xl p-6 flex flex-col justify-between min-h-[240px]">
           <div className="text-[10px] font-semibold uppercase tracking-widest opacity-40">The Journey</div>
           <p className="text-sm md:text-base leading-relaxed opacity-85 flex-1 mt-3">
-            Grew up in <strong>Bhutan</strong>. High school in <strong>Japan</strong>. College in the{' '}
-            <strong>US</strong>. A semester in <strong>Australia</strong>. Each country handed me
-            something different — a new language, a new way of seeing, a new version of myself.
+            Grew up in <strong>Bhutan</strong>. High school in a UWC in <strong>Japan</strong>. College in the{' '}
+            <strong>US</strong>. A semester in <strong>Australia</strong> and working as a code camp facilitator at Cambodia. Each country handed me
+            something different, a new language, a new way of seeing, a new version of myself.
             If there's one thing all that moving around taught me, it's that life is just one long
-            lesson, and the classroom keeps changing.
+            lesson, and the classroom keeps changing. 
           </p>
           <div className="flex flex-wrap gap-2 pt-4 border-t border-black/10 mt-4">
-            {['🇧🇹 Bhutan', '🇯🇵 Japan', '🇺🇸 USA', '🇦🇺 Australia'].map((c) => (
+            {['🇧🇹 Bhutan', '🇯🇵 Japan', '🇺🇸 USA', '🇦🇺 Australia', '🇰🇭 Cambodia', '🇮🇳 India'].map((c) => (
               <span key={c} className="text-xs px-2.5 py-1 rounded-full bg-black/10 font-medium">{c}</span>
             ))}
           </div>
